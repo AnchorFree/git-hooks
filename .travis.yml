@@ -1,0 +1,10 @@
+before_install:
+  - env
+  - git clone https://github.com/sstephenson/bats.git /var/tmp/bats
+  - cd /var/tmp/bats
+  - sudo ./install.sh /usr/local
+  - rm -rf /var/tmp/bats
+
+script:
+  - cd /home/travis/build/AnchorFree/git-hooks
+  - bats bats
